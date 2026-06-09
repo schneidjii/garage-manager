@@ -2,8 +2,8 @@
   "name": "Schneider Farms Garage",
   "short_name": "SF Garage",
   "description": "Fleet and equipment tracker for Schneider Farms",
-  "start_url": "/garage/?pwa=1",
-  "scope": "/garage/",
+  "start_url": "/garage-manager/?pwa=1",
+  "scope": "/garage-manager/",
   "id": "sf-garage-2024",
   "display": "standalone",
   "background_color": "#0f110e",
@@ -11,17 +11,20 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/garage/garage-icon-192.png",
+      "src": "/garage-manager/garage-icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/garage/garage-icon-512.png",
+      "src": "/garage-manager/garage-icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     }
   ],
-  "categories": ["utilities", "productivity"]
+  "categories": [
+    "utilities",
+    "productivity"
+  ]
 }
