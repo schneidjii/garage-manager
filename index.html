@@ -1336,7 +1336,7 @@ function renderFinancial() {
 // SETTINGS
 function loadSettings() {
   document.getElementById('patInput').value = localStorage.getItem('gh_pat') || '';
-  document.getElementById('repoInput').value = localStorage.getItem('gh_repo') || 'schneidjii/schneidjii.github.io';
+  document.getElementById('repoInput').value = localStorage.getItem('gh_repo') || 'schneidjii/garage-manager';
   document.getElementById('pathInput').value = localStorage.getItem('gh_path') || 'garage-data.json';
   document.getElementById('notifDays').value = localStorage.getItem('notifDays') || '30';
   var isLight = localStorage.getItem('theme') === 'light';
@@ -1412,7 +1412,7 @@ function applyStoredTheme() {
 // GITHUB SYNC
 async function syncToGitHub() {
   var pat = localStorage.getItem('gh_pat') || '';
-  var repo = localStorage.getItem('gh_repo') || 'schneidjii/schneidjii.github.io';
+  var repo = localStorage.getItem('gh_repo') || 'schneidjii/garage-manager';
   var path = localStorage.getItem('gh_path') || 'garage-data.json';
   if (!pat) { showToast('Add your GitHub token in Settings first'); return; }
   var btn = document.getElementById('syncBtn');
@@ -1433,7 +1433,7 @@ async function syncToGitHub() {
 
 async function loadFromGitHub() {
   var pat = localStorage.getItem('gh_pat') || '';
-  var repo = localStorage.getItem('gh_repo') || 'schneidjii/schneidjii.github.io';
+  var repo = localStorage.getItem('gh_repo') || 'schneidjii/garage-manager';
   var path = localStorage.getItem('gh_path') || 'garage-data.json';
   if (!pat) { showToast('Add your GitHub token in Settings first'); return; }
   try {
@@ -1474,7 +1474,7 @@ document.getElementById('ocrModalOverlay').addEventListener('click', function(e)
 // SERVICE WORKER
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/garage/garage-sw.js', { scope: '/garage/' }).then(function(reg) {
+    navigator.serviceWorker.register('/garage/garage-sw.js', { scope: '/garage-manager/' }).then(function(reg) {
       console.log('SF Garage SW registered:', reg.scope);
     }).catch(function(e) {
       console.log('SW failed:', e);
