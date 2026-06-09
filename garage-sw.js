@@ -1,5 +1,5 @@
-var CACHE = 'sf-garage-v1';
-var BASE = '/garage/';
+var CACHE = 'sf-garage-v2';
+var BASE = '/garage-manager/';
 var ASSETS = [
   BASE + 'index.html',
   BASE + 'garage-manifest.json',
@@ -15,7 +15,6 @@ var ASSETS = [
   BASE + 'splash-light-1179x2556.png',
   BASE + 'splash-light-828x1792.png'
 ];
-
 self.addEventListener('install', function(e) {
   e.waitUntil(
     caches.open(CACHE).then(function(cache) {
@@ -26,7 +25,6 @@ self.addEventListener('install', function(e) {
   );
   self.skipWaiting();
 });
-
 self.addEventListener('activate', function(e) {
   e.waitUntil(
     caches.keys().then(function(keys) {
@@ -38,7 +36,6 @@ self.addEventListener('activate', function(e) {
   );
   self.clients.claim();
 });
-
 self.addEventListener('fetch', function(e) {
   if (e.request.url.indexOf(BASE) === -1) return;
   e.respondWith(
